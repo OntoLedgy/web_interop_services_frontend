@@ -1,11 +1,12 @@
 import React, { Component } from "react";
 import "./DataExchangeHistory.scss";
+import DataFromBackEnd from "../DataFromBackEnd";
+
 
 class DataExchangeHistory extends Component {
     render() {
-        const messages = this.props.dataExchangeHistory.map((msg, index) => (
-            <p key={index}>{msg.data}</p>
-        ));
+        console.log(this.props.dataExchangeHistory);
+        const messages = this.props.dataExchangeHistory.map(msg => <DataFromBackEnd message={msg.data} />);
 
         return (
             <div className="DataExchangeHistory">

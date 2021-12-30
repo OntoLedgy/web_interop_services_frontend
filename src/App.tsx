@@ -3,6 +3,8 @@ import "./App.css";
 import { connect, sendMsg } from "./api";
 import Header from './components/Header/Header';
 import DataExchangeHistory from "./components/DataExchangeHistory";
+import DataInput from "./components/DataInput";
+import DataFromBackEnd from "./components/DataFromBackEnd";
 
 class App extends Component<any,any> {
   constructor(props :any[]) {
@@ -22,22 +24,25 @@ class App extends Component<any,any> {
         });
     }
 
-  send() {
-    console.log("Message abou to be sent : hello");
-    sendMsg("hello");
+  send(event:any) {
+      if(event.keyCode === 13) {
+          console.log("Message about to be sent");
+          sendMsg(event.target.value);
+          event.target.value = "";
+      }
+
   }
 
   render() {
+
     return (
-        <div className="App">
-          <Header />
-            <DataExchangeHistory
-                dataExchangeHistory={this.state.dataExchangeHistory} />
+        <div>
+        <Header />
 
+        <DataExchangeHistory dataExchangeHistory={this.state.dataExchangeHistory}/>
 
+        <DataInput send={this.send} />
 
-
-          <button onClick={this.send}>Hit</button>
         </div>
     );
   }
