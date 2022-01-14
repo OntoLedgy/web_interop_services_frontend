@@ -5,6 +5,7 @@ import Header from './components/Header/Header';
 import DataExchangeHistory from "./components/DataExchangeHistory";
 import DataInput from "./components/DataInput";
 import TreeExplorer from "./components/TreeExplorer";
+import CheckBoxTree from "./components/CheckBoxTree";
 
 class App extends Component<any,any> {
   constructor(props :any[]) {
@@ -46,7 +47,9 @@ class App extends Component<any,any> {
 
         <DataInput send={this.send} />
 
-        <TreeExplorer/>
+        {/*<TreeExplorer/>*/}
+
+        <CheckBoxTree/>
 
         </div>
     );
