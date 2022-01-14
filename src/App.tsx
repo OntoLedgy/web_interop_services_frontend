@@ -4,7 +4,7 @@ import { connect, sendMsg } from "./api";
 import Header from './components/Header/Header';
 import DataExchangeHistory from "./components/DataExchangeHistory";
 import DataInput from "./components/DataInput";
-import DataFromBackEnd from "./components/DataFromBackEnd";
+import TreeExplorer from "./components/TreeExplorer";
 
 class App extends Component<any,any> {
   constructor(props :any[]) {
@@ -37,11 +37,16 @@ class App extends Component<any,any> {
 
     return (
         <div>
+
         <Header />
 
-        <DataExchangeHistory dataExchangeHistory={this.state.dataExchangeHistory}/>
+        <DataExchangeHistory
+            dataExchangeHistory=
+                {this.state.dataExchangeHistory}/>
 
         <DataInput send={this.send} />
+
+        <TreeExplorer/>
 
         </div>
     );

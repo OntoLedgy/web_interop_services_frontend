@@ -2,11 +2,15 @@ import React, { Component } from "react";
 import "./DataExchangeHistory.scss";
 import DataFromBackEnd from "../DataFromBackEnd";
 
+interface IDataFromBackEndProps {
+    dataExchangeHistory : any;
+}
 
-class DataExchangeHistory extends Component {
+class DataExchangeHistory extends Component<IDataFromBackEndProps> {
     render() {
         console.log(this.props.dataExchangeHistory);
-        const messages = this.props.dataExchangeHistory.map(msg => <DataFromBackEnd message={msg.data} />);
+        const messages = this.props.dataExchangeHistory.map(
+            (msg:any) => <DataFromBackEnd message={msg.data} />);
 
         return (
             <div className="DataExchangeHistory">

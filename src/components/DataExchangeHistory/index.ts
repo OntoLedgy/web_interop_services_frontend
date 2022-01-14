@@ -1,3 +1,3 @@
-import DataExchangeHistory from "./DataExchangeHistory.jsx";
+import DataExchangeHistory from "./DataExchangeHistory";
 
 export default DataExchangeHistory;
