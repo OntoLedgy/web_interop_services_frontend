@@ -1,0 +1,26 @@
+  [
+    {
+      "value": "SyntacticCheckerConfiguration",
+      "label": "SyntacticCheckerConfiguration",
+      "children": [
+        {
+          "value": "IssueTypes",
+          "label": "IssueTypes",
+          "children": [
+            {
+              "value": "Automatic Syntactic Check - Leading Spaces",
+              "label": "Automatic Syntactic Check - Leading Spaces"
+            },
+            {
+              "value": "Automatic Syntactic Check - Multiple Embedded Spaces",
+              "label": "Automatic Syntactic Check - Multiple Embedded Spaces"
+            },
+            {
+              "value": "Automatic Syntactic Check - Trailing Spaces",
+              "label": "Automatic Syntactic Check - Trailing Spaces"
+            }
+          ]
+        }
+      ]
+    }
+  ]

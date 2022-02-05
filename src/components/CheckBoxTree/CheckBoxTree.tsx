@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import CheckboxTree  from 'react-checkbox-tree';
 import './CheckBoxTree.scss'
-import data from '../../data/TreeData.json'
+import data from '../../data/CheckBoxTreeData.json'
 
 class CheckBoxTree extends Component<any,any> {
     state = {
@@ -10,19 +10,11 @@ class CheckBoxTree extends Component<any,any> {
     };
 
     render() {
-        const nodes = [{
-            value: 'mars',
-            label: 'Mars',
-            children: [
-                { value: 'phobos', label: 'Phobos' },
-                { value: 'deimos', label: 'Deimos' },
-            ],
-        }];
+    const nodeData = data
         return (
-            <div id="treeWrapper" style=
-                {{width: '100em', height: '120em'}}>
+            <div>
                 <CheckboxTree
-                    nodes={nodes}
+                    nodes={nodeData}
                     checked={this.state.checked}
                     expanded={this.state.expanded}
                     onCheck={checked => this.setState({ checked })}

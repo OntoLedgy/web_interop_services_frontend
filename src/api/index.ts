@@ -21,9 +21,9 @@ let connect = (cb: any) => {
     };
 };
 
-let sendMsg = (msg: string ) => {
+let sendMessage = (msg: string ) => {
     console.log("sending msg: ", msg);
     socket.send(msg);
 };
 
-export { connect, sendMsg };
+export { connect, sendMessage };

@@ -3,19 +3,22 @@ import "./DataExchangeHistory.scss";
 import DataFromBackEnd from "../DataFromBackEnd";
 
 interface IDataFromBackEndProps {
-    dataExchangeHistory : any;
+    dataExchangeHistory : [] ;
 }
 
 class DataExchangeHistory extends Component<IDataFromBackEndProps> {
     render() {
         console.log(this.props.dataExchangeHistory);
+
         const messages = this.props.dataExchangeHistory.map(
-            (msg:any) => <DataFromBackEnd message={msg.data} />);
+            (msg:any) =>
+                <DataFromBackEnd message={msg.data} />
+        );
 
         return (
-            <div className="DataExchangeHistory">
+            <div key="{key}" className="DataExchangeHistory">
                 <h2>Data Exchange History</h2>
-                {messages}
+                    {messages}
             </div>
         );
     }

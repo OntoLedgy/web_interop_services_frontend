@@ -1,11 +1,14 @@
 import React, { Component } from "react";
 import "./App.css";
-import { connect, sendMsg } from "./api";
+import { connect, sendMessage } from "./api";
 import Header from './components/Header/Header';
 import DataExchangeHistory from "./components/DataExchangeHistory";
 import DataInput from "./components/DataInput";
-import TreeExplorer from "./components/TreeExplorer";
 import CheckBoxTree from "./components/CheckBoxTree";
+import TreeExplorer from "./components/TreeExplorer";
+import SyntacticChecker from "./components/SyntacticChecker";
+import Navigation from "./components/Navigation";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 
 class App extends Component<any,any> {
   constructor(props :any[]) {
@@ -17,9 +20,11 @@ class App extends Component<any,any> {
 
   componentDidMount() {
       connect((msg:any) => {
-          console.log("Recieved Message")
-          this.setState((prevState:any) => ({
-              dataExchangeHistory: [...this.state.dataExchangeHistory, msg]
+          console.log("Received Message")
+          this.setState(() => ({
+              dataExchangeHistory: [
+                  ...this.state.dataExchangeHistory,
+                  msg]
             }))
             console.log(this.state);
         });
@@ -28,7 +33,7 @@ class App extends Component<any,any> {
   send(event:any) {
       if(event.keyCode === 13) {
           console.log("Message about to be sent");
-          sendMsg(event.target.value);
+          sendMessage(event.target.value);
           event.target.value = "";
       }
 
@@ -38,19 +43,18 @@ class App extends Component<any,any> {
 
     return (
         <div>
-
-        <Header />
-
-        <DataExchangeHistory
-            dataExchangeHistory=
-                {this.state.dataExchangeHistory}/>
-
-        <DataInput send={this.send} />
-
-        {/*<TreeExplorer/>*/}
-
-        <CheckBoxTree/>
-
+        <Router>
+            <Routes>
+                <Route path="/" element={<Header/>}/>
+                <Route path="/dataExchangeHistory" element={<DataExchangeHistory
+                    dataExchangeHistory=
+                        {this.state.dataExchangeHistory}/>}/>
+                <Route path="/treeExplorer" element={<TreeExplorer/>}/>
+                <Route path="/dataInput" element={<DataInput send={this.send} />}/>
+                <Route path="/SyntacticChecker" element={<SyntacticChecker />}/>
+            </Routes>
+            <Navigation/>
+        </Router>
         </div>
     );
   }

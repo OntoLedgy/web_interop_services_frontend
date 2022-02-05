@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import Tree from 'react-d3-tree';
 import './TreeExplorer.scss'
-import data from '../../data/TreeData.json'
+import data from '../../data/TreeExplorerData.json'
 
 class TreeExplorer extends Component<any,any> {
 
@@ -9,7 +9,7 @@ class TreeExplorer extends Component<any,any> {
         return (
             <div id="treeWrapper" style=
                 {{width: '100em', height: '120em'}}>
-                <Tree data={data}
+                <Tree data= {data}
                       orientation={"vertical"}
                       rootNodeClassName="node__root"
                       branchNodeClassName="node__branch"
