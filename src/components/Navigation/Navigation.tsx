@@ -31,6 +31,11 @@ function Navigation() {
                                     SyntacticChecker
                                 </NavLink>
                             </li>
+                            <li className="nav-item">
+                                <NavLink className="nav-link" to="/WebGlCanvas">
+                                    WebGlCanvas
+                                </NavLink>
+                            </li>
 
                         </ul>
                     </div>

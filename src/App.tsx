@@ -4,11 +4,11 @@ import { connect, sendMessage } from "./api";
 import Header from './components/Header/Header';
 import DataExchangeHistory from "./components/DataExchangeHistory";
 import DataInput from "./components/DataInput";
-import CheckBoxTree from "./components/CheckBoxTree";
 import TreeExplorer from "./components/TreeExplorer";
 import SyntacticChecker from "./components/SyntacticChecker";
 import Navigation from "./components/Navigation";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import WebGlCanvas from "./components/Grpahics";
 
 class App extends Component<any,any> {
   constructor(props :any[]) {
@@ -43,7 +43,7 @@ class App extends Component<any,any> {
 
     return (
         <div>
-        <Router>
+            <Router>
             <Routes>
                 <Route path="/" element={<Header/>}/>
                 <Route path="/dataExchangeHistory" element={<DataExchangeHistory
@@ -52,7 +52,9 @@ class App extends Component<any,any> {
                 <Route path="/treeExplorer" element={<TreeExplorer/>}/>
                 <Route path="/dataInput" element={<DataInput send={this.send} />}/>
                 <Route path="/SyntacticChecker" element={<SyntacticChecker />}/>
+                <Route path="/WebGlCanvas" element={<WebGlCanvas/>}/>
             </Routes>
+
             <Navigation/>
         </Router>
         </div>
