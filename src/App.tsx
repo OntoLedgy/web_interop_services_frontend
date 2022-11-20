@@ -9,7 +9,9 @@ import SyntacticChecker from "./components/SyntacticChecker";
 import Navigation from "./components/Navigation";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import WebGlCanvas from "./components/Grpahics";
-import Button from '@mui/material/Button'
+
+import CssBaseline from '@mui/material/CssBaseline';
+import { Box, Container, Stack  } from '@mui/system';
 
 class App extends Component<any,any> {
   constructor(props :any[]) {
@@ -44,21 +46,25 @@ class App extends Component<any,any> {
 
     return (
         <div>
-            <Button variant="contained">Hello World</Button>
-            <Router>
-            <Routes>
-                <Route path="/" element={<Header/>}/>
-                <Route path="/dataExchangeHistory" element={<DataExchangeHistory
-                    dataExchangeHistory=
-                        {this.state.dataExchangeHistory}/>}/>
-                <Route path="/treeExplorer" element={<TreeExplorer/>}/>
-                <Route path="/dataInput" element={<DataInput send={this.send} />}/>
-                <Route path="/SyntacticChecker" element={<SyntacticChecker />}/>
-                <Route path="/WebGlCanvas" element={<WebGlCanvas/>}/>
-            </Routes>
 
-            <Navigation/>
-        </Router>
+            <CssBaseline />
+            <Container maxWidth="sm">
+                    <Router>
+                        <Routes>
+                            <Route path="/" element={<Header/>}/>
+                            <Route path="/dataExchangeHistory"
+                                   element={<DataExchangeHistory
+                                       dataExchangeHistory=
+                                           {this.state.dataExchangeHistory}/>}/>
+                            <Route path="/treeExplorer" element={<TreeExplorer/>}/>
+                            <Route path="/dataInput" element={<DataInput send={this.send} />}/>
+                            <Route path="/SyntacticChecker" element={<SyntacticChecker />}/>
+                            <Route path="/WebGlCanvas" element={<WebGlCanvas/>}/>
+                        </Routes>
+                        <Navigation/>
+                    </Router>
+
+            </Container>
         </div>
     );
   }
