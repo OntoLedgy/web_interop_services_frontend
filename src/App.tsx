@@ -9,6 +9,7 @@ import SyntacticChecker from "./components/SyntacticChecker";
 import Navigation from "./components/Navigation";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import WebGlCanvas from "./components/Grpahics";
+import Button from '@mui/material/Button'
 
 class App extends Component<any,any> {
   constructor(props :any[]) {
@@ -43,6 +44,7 @@ class App extends Component<any,any> {
 
     return (
         <div>
+            <Button variant="contained">Hello World</Button>
             <Router>
             <Routes>
                 <Route path="/" element={<Header/>}/>

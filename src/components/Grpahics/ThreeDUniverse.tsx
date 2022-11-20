@@ -56,6 +56,5 @@ const ThreeDUniverse = () => {
 export default function ThreeDUniverseCanvas() {
     return (
             <ThreeDUniverse/>
-
     );
 }
