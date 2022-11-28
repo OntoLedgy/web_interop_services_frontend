@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import CheckboxTree  from 'react-checkbox-tree';
-import './CheckBoxTree.scss'
-import data from '../../data/CheckBoxTreeData.json'
+import './CheckBoxTree.scss';
+import data from '../../data/CheckBoxTreeData.json';
 import TreeView from '@mui/lab/TreeView';
 import TreeItem from '@mui/lab/TreeItem';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
