@@ -42,6 +42,11 @@ function Navigation() {
                                             WebGlCanvas
                                         </NavLink>
                                     </li>
+                                    <li className="nav-item">
+                                        <NavLink className="nav-link" to="/ForceGraph">
+                                            ForceGraph
+                                        </NavLink>
+                                    </li>
                                 </Stack>
                         </ul>
                         </div>

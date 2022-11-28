@@ -8,7 +8,8 @@ import TreeExplorer from "./components/TreeExplorer";
 import SyntacticChecker from "./components/SyntacticChecker";
 import Navigation from "./components/Navigation";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import WebGlCanvas from "./components/Grpahics";
+import WebGlCanvas from "./components/Graphics";
+import ForceGraph from "./components/Graphics/Graphs/ForceGraphs";
 
 import CssBaseline from '@mui/material/CssBaseline';
 import { Box, Container, Stack  } from '@mui/system';
@@ -60,6 +61,7 @@ class App extends Component<any,any> {
                             <Route path="/dataInput" element={<DataInput send={this.send} />}/>
                             <Route path="/SyntacticChecker" element={<SyntacticChecker />}/>
                             <Route path="/WebGlCanvas" element={<WebGlCanvas/>}/>
+                            <Route path="/ForceGraph" element={<ForceGraph/>}/>
                         </Routes>
                         <Navigation/>
                     </Router>
