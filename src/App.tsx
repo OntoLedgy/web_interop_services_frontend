@@ -10,6 +10,7 @@ import Navigation from "./components/Navigation";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import WebGlCanvas from "./components/Graphics";
 import ForceGraph from "./components/Graphics/Graphs/ForceGraphs";
+import Sidebar from "./components/LayoutComponents/Sidebar";
 
 import CssBaseline from '@mui/material/CssBaseline';
 import { Box, Container, Stack  } from '@mui/system';
@@ -46,8 +47,10 @@ class App extends Component<any,any> {
   render() {
 
     return (
-        <div>
+        <div className="App" id="outer-container">
+            {/*<Sidebar pageWrapId={'page-wrap'} outerContainerId={'outer-container'} />*/}
 
+            <div className="App" id="main-page">
             <CssBaseline />
             <Container maxWidth="sm">
                     <Router>
@@ -63,10 +66,12 @@ class App extends Component<any,any> {
                             <Route path="/WebGlCanvas" element={<WebGlCanvas/>}/>
                             <Route path="/ForceGraph" element={<ForceGraph/>}/>
                         </Routes>
+
                         <Navigation/>
                     </Router>
 
             </Container>
+            </div>
         </div>
     );
   }

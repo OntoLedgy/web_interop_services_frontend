@@ -1,30 +1,48 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
+import "./Navigation.css";
 import { Box, Container, Stack  } from '@mui/system';
 
 function Navigation() {
+
+    const LinkStyle = (isActive:boolean) =>
+        isActive
+            ? {
+                color: '#fff',
+                background: '#7600dc',
+            }
+            : {
+                color: '#545e6f',
+                background: '#f0f0f0' }
+
+
     return (
         <div className="navigation">
-            <nav className="navbar navbar-expand navbar-dark bg-dark">
-                <div className="container">
-                    <NavLink className="navbar-brand" to="/">
-                        <p> OntoLedgy Web Interop Services
+            <nav className="navbar navbar-expand-lg navbar-light bg-light">
+                <div className="container-fluid">
+                    <NavLink
+                        className="navbar-brand"
+                        to="/"
+                    >
+                        <p> Home
                             <br/>
                             <br/>
                         </p>
-
                     </NavLink>
                     <div>
-                        <ul className="navbar-nav ml-auto">
+                        <ul className="navbar-nav ms-auto">
                                 <Stack spacing={3}>
                                     <li className="nav-item">
-                                        <NavLink className="nav-link" to="/treeExplorer">
+                                        <NavLink
+                                            className="nav-link"
+                                            to="/treeExplorer">
+
                                             Tree Explorer
                                         </NavLink>
                                     </li>
                                     <li className="nav-item">
                                         <NavLink className="nav-link" to="/dataInput">
-                                            DataInput
+                                            Data Input
                                         </NavLink>
                                     </li>
                                     <li className="nav-item">
